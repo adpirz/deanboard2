@@ -61,10 +61,10 @@ WSGI_APPLICATION = 'deanboard2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dtfqrs10gqfq5',
-        'USER': 'mxbapkbtyelbfl'
+        'NAME': 'deanboard2',
     }
 }
+DATABASES['default'] = dj_database_url.config()
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
@@ -89,5 +89,5 @@ STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),
     )
-DATABASES['default'] = dj_database_url.config()
+
 
