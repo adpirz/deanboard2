@@ -61,7 +61,8 @@ WSGI_APPLICATION = 'deanboard2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'deanboard2',
+        'NAME': 'dtfqrs10gqfq5',
+        'USER': 'mxbapkbtyelbfl'
     }
 }
 
