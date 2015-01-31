@@ -1,0 +1,5 @@
+<form action="{% url 'referral_delete' referral.pk %}"method="post" accept-charset="utf-8">
+	{% csrf_token %}
+	<p> Are you sure you want to delete this referral for {{ referral.scholar }} taken on {{referral.datetime}}?</p>
+	<input type="submit" name="submit" value="Confirm"/>
+</form>

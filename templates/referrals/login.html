@@ -1,0 +1,17 @@
+{% if error %}
+	{{error}}
+{% endif %}
+
+{% if user.is_authenticated %}
+	<h1>Hi, {{ user.username }}</h1>
+
+{% else %}
+<form action="{% url 'user_login' %}" method="post" accept-charset="utf-8">
+	{% csrf_token %}
+	Username: <input type="text" name="username">
+	<br>
+	Password: <input type="password" name="password">
+	<br>
+	<input type='submit' value="Submit">
+</form>
+{% endif %}	

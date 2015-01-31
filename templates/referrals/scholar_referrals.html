@@ -1,0 +1,19 @@
+
+<h1>{{ scholar.first_name }}'s Discipline Profile</h1>
+
+{% for referral in referral_list %}
+	<ul>
+		<li>Staff: {{ referral.staff }}</li>
+		<li>Time: {{ referral.datetime }}</li>
+		<li>Reason: {{ referral.reason }}</li>
+		<li>Consequence: {{ referral.consequence }} </li>
+	{% if user.is_authenticated %}
+		<li><a href = "{% url 'referral_delete' referral.pk %}">Delete?</a></li>
+		<li><a href = "{% url 'referral_delete' referral.pk %}">Edit?</a></li>
+	{% endif %}	
+	</ul>
+
+{% empty %}
+<h2>No referrals.</h2>
+
+{% endfor %}

@@ -1,0 +1,12 @@
+{% for referral in object_list %}
+<h1> Referral for {{ referral.scholar }}</h1>
+<ul>
+	<li>Staff: {{ referral.staff }}</li>
+	<li>Time: {{ referral.datetime }}</li>
+	<li>Reason: {{ referral.reason }}</li>
+	<li>Description: {{ referral.description }}</li>
+	<li>Consequence: {{ referral.consequence }}</li>
+</ul>
+<br/>
+
+{% endfor %}

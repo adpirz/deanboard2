@@ -1,0 +1,13 @@
+<h1> Referral </h1>
+
+{% if referral %}
+
+<ul>
+	<li>Staff: {{ referral.staff }}</li>
+	<li>Scholar: {{ referral.scholar }}</li>
+	<li>Time: {{ referral.datetime }}</li>
+	<li>Description: {{ referral.description }}</li>
+</ul>
+{% endif %}
+
+<a href="{% url 'index' %}">Back to Main</a>
