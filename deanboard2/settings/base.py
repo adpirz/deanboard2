@@ -21,9 +21,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '1l-1$t9@=8narxn_$py!i$@)e1-(r+xbhsr%mt2@o9zyacoq@0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -60,12 +57,7 @@ WSGI_APPLICATION = 'deanboard2.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'deanboard2',
-    }
-}
+
 # DATABASES['default'] = dj_database_url.config()
 
 # Internationalization
