@@ -11,9 +11,9 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 
 # Create your views here.
-# class IndexView(ListView):
-# 	template_name = 'referrals/index.html'
-# 	model = Referral
+class IndexView(ListView):
+	template_name = 'referrals/index.html'
+	model = Referral
 
 # class ReferralDetail(DetailView):
 # 	model = Referral
