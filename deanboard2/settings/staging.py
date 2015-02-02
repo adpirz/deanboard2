@@ -7,4 +7,6 @@ TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = []
 
-DATABASES['default'] = dj_database_url.config()
+DATABASES = {
+	'default':dj_database_url.config()
+}
