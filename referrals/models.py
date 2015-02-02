@@ -93,7 +93,7 @@ class Referral(models.Model):
 
     scholar = models.ForeignKey(Scholar)
     staff = models.ForeignKey(Staff)
-    datetime = models.DateTimeField(auto_now=True)
+    datetime = models.DateTimeField(auto_now_add=True)
     reason = models.CharField(max_length = 100, choices=REASONS_CHOICES)
     description = models.CharField(max_length=300, blank=True)
     in_dos = models.BooleanField(default=False)

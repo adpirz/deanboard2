@@ -1,33 +1,41 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
-	<link rel="stylesheet" href="">
-</head>
-<body>
-<p><a href="{% url 'referral_new' %}">Click here for new referral</a></p>
-<h1>Referrals</h1>
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body_block %}
+<div class="container">
+	<h1 align="center">Referrals</h1>
+</div>
+
 {% if object_list %}
 	{% for referral in object_list %}
-	<a href = "{% url 'referral' referral.pk %}">Ref #{{ referral.pk }}: {{referral.scholar}}, {{referral.reason}}</a>
-	<ul>
-		<li>Scholar: <a href="{% url 'scholar' referral.scholar.pk %}">{{ referral.scholar }}, id:{{ referral.scholar.id }}</a></li>
-		<li>Staff: {{ referral.staff }}</li>
-		<li>Time: {{ referral.datetime }}</li>
-		<li>Reason: {{ referral.reason }}</li>
-		<li>Consequence: {{ referral.consequence }} </li>
-	{% if user.is_authenticated %}
-		<li><a href = "{% url 'referral_delete' referral.pk %}">Delete?</a></li>
-		<li><a href = "{% url 'referral_edit' referral.pk %}">Edit?</a></li>
-	{% endif %}	
-	</ul>
+	<div class="container col-sm-6 col-md-4 col-lg-4">
+		<div class="panel panel-default">
+			 <div class="panel-heading">
+				<h3 class="panel-title"><a href = "{% url 'referral' referral.pk %}">Ref #{{ referral.pk }}: {{referral.scholar}}</a></h3>
+			</div>
+			<div class="panel-body">
+			<ul class="list-group">
+				<li class="list-group-item">Scholar: <a href="{% url 'scholar' referral.scholar.pk %}">{{ referral.scholar }}, id:{{ referral.scholar.id }}</a></li>
+				<li class="list-group-item">Staff: {{ referral.staff }}</li>
+				<li class="list-group-item">Time: {{ referral.datetime }}</li>
+				<li class="list-group-item">Reason: {{ referral.reason }}</li>
+				<li class="list-group-item">Consequence: {{ referral.consequence }}</li>
+			</ul>
+			{% if user.is_authenticated %}
+			<div class="btn-group btn-group-justified">
+				<a href = "{% url 'referral_delete' referral.pk %}" class="btn btn-warning" >Delete</a>
+				<a href = "{% url 'referral_edit' referral.pk %}" class="btn btn-primary ">Edit</a>
+			</div>
+			{% endif %}	
+			</div>
+		</div>
+
+	</div>
+
 
 	{% endfor %}
 {% else %}
 <h2>No referrals.</h2>
 {% endif %}
 	
-</body>
-</html>
+{% endblock body_block %}
