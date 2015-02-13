@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body_block %}
 
 <h1>{{ scholar.first_name }}'s Discipline Profile</h1>
 
@@ -17,3 +21,5 @@
 <h2>No referrals.</h2>
 
 {% endfor %}
+	
+{% endblock body_block %}

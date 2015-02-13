@@ -12,3 +12,5 @@ DATABASES = {
         'NAME': 'deanboard2',
     }
 }
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
