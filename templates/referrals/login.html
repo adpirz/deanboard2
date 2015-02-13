@@ -1,17 +1,29 @@
+{% extends "base.html" %}
+
+{% block body_block %}
+	
 {% if error %}
-	{{error}}
+<span class="label label-danger">{{error}}</span>
 {% endif %}
 
 {% if user.is_authenticated %}
 	<h1>Hi, {{ user.username }}</h1>
 
 {% else %}
-<form action="{% url 'user_login' %}" method="post" accept-charset="utf-8">
-	{% csrf_token %}
-	Username: <input type="text" name="username">
-	<br>
-	Password: <input type="password" name="password">
-	<br>
-	<input type='submit' value="Submit">
-</form>
+	<div class="well">
+        <form action="{% url 'user_login' %}" method="post" accept-charset="utf-8">
+        {% csrf_token %}                    
+        <legend>Login</legend>
+        
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" name="username" placeholder="Username">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control" required="required">
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 {% endif %}	
+{% endblock body_block %}

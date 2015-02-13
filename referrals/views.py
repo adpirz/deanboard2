@@ -6,6 +6,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.views import logout
 from django.contrib.auth.decorators import login_required
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
@@ -58,16 +59,6 @@ class ReferralCreate(CreateView):
 class ReferralEdit(UpdateView):
 	model = Referral
 	fields = ['scholar','staff','reason','description','consequence']
-	def __init__(self, *args, **kwargs):
-		super(ReferralEdit, self).__init__(*args, **kwargs)
-		self.helper = FormHelper()
-		self.helper.form_id = 'id-referral'
-		self.helper.form_method='post'
-		self.helper.form_class='ModelForm'
-		self.helper.form_action='submit'
-
-		self.helper.add_input(Submit('submit','Submit'))
-
 
 def user_login(request):
 	if request.method == 'POST':
@@ -87,3 +78,10 @@ def user_login(request):
 
 	else:
 		return render(request,'referrals/login.html',{})
+
+@login_required
+def user_logout(request):
+	logout(request)
+	return HttpResponseRedirect('/')
+
+
