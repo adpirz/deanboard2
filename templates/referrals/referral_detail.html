@@ -1,14 +1,35 @@
-<h1> Referral </h1>
+{% extends "base.html" %}
 
+{% block body_block %}
 {% if referral %}
 
-<ul>
-	<li>Staff: {{ referral.staff }}</li>
-	<li>Scholar: {{ referral.scholar }}</li>
-	<li>Time: {{ referral.datetime }}</li>
-	<li>Description: {{ referral.description }}</li>
-</ul>
 
+	<div class="container">
+		<div class="panel panel-default">
+			 <div class="panel-heading">
+				<h3 class="panel-title"><a href = "{% url 'referral' referral.pk %}">Ref #{{ referral.pk }}: {{referral.scholar}}</a></h3>
+			</div>
+			<div class="panel-body">
+			<ul class="list-group">
+				<li class="list-group-item">Scholar: <a href="{% url 'scholar' referral.scholar.pk %}">{{ referral.scholar }}, id:{{ referral.scholar.id }}</a></li>
+				<li class="list-group-item">Staff: {{ referral.staff }}</li>
+				<li class="list-group-item">Time: {{ referral.datetime }}</li>
+				<li class="list-group-item">Reason: {{ referral.reason }}</li>
+				<li class="list-group-item">Consequence: {{ referral.consequence }}</li>
+			</ul>
+			{% if user.is_authenticated %}
+			<div class="btn-group btn-group-justified">
+				<a href = "{% url 'referral_delete' referral.pk %}" class="btn btn-warning" >Delete</a>
+				<a href = "{% url 'referral_edit' referral.pk %}" class="btn btn-primary ">Edit</a>
+			</div>
+			{% endif %}	
+			</div>
+		</div> <!--end one referral-->
+	</div>
 {% endif %}
+<div class="well">
+	<a href = "{% url 'index'%}" class="btn btn-primary">Back to Main</a>
+</div>
 
-<a href="{% url 'index' %}">Back to Main</a>
+{% endblock body_block %}
+

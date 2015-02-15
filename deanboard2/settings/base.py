@@ -36,7 +36,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'referrals',
     'crispy_forms',
+    'autocomplete_light',
 )
+
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 MIDDLEWARE_CLASSES = (

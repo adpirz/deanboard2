@@ -3,7 +3,9 @@
 
 {% block body_block %}
 <div class="container">
+	<button type="button" class="btn btn-danger btn-lg btn-block visible-xs" href="{% url 'referral_new' %}">New Referral</button>
 	<h1 align="center">Referrals</h1>
+	
 </div>
 
 {% if object_list %}
@@ -11,11 +13,11 @@
 	<div class="container col-sm-6 col-md-4 col-lg-4">
 		<div class="panel panel-default">
 			 <div class="panel-heading">
-				<h3 class="panel-title"><a href = "{% url 'referral' referral.pk %}">Ref #{{ referral.pk }}: {{referral.scholar}}</a></h3>
+				<h3 class="panel-title"><a href = "{% url 'referral' referral.pk %}">#{{ referral.pk }}: {{referral.scholar.first_name}}, sent by {{ referral.staff.user.last_name }} ({{ referral.datetime.time }})</a></h3>
 			</div>
 			<div class="panel-body">
 			<ul class="list-group">
-				<li class="list-group-item">Scholar: <a href="{% url 'scholar' referral.scholar.pk %}">{{ referral.scholar }}, id:{{ referral.scholar.id }}</a></li>
+				<li class="list-group-item">Scholar: <a href="{% url 'scholar' referral.scholar.pk %}">{{ referral.scholar }}</a></li>
 				<li class="list-group-item">Staff: {{ referral.staff }}</li>
 				<li class="list-group-item">Time: {{ referral.datetime }}</li>
 				<li class="list-group-item">Reason: {{ referral.reason }}</li>
@@ -28,9 +30,8 @@
 			</div>
 			{% endif %}	
 			</div>
+			</div> <!--end one referral-->
 		</div>
-
-	</div>
 
 
 	{% endfor %}

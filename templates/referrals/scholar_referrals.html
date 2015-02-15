@@ -3,14 +3,14 @@
 
 {% block body_block %}
 
-<h1>{{ scholar.first_name }} {{ scholar.last_name }}'s Discipline Profile</h1>
+<h1><strong>{{ scholar.first_name }} {{ scholar.last_name }}</strong>'s Discipline Profile</h1>
 
 {% for referral in referral_list %}
 
 	<div class="container col-sm-6 col-md-4 col-lg-4">
 		<div class="panel panel-default">
 			 <div class="panel-heading">
-				<h3 class="panel-title"><a href = "{% url 'referral' referral.pk %}">Ref #{{ referral.pk }}</a></h3>
+				<h3 class="panel-title"><a href = "{% url 'referral' referral.pk %}">Ref. #{{ referral.pk }}</a></h3>
 			</div>
 			<div class="panel-body">
 			<ul class="list-group">

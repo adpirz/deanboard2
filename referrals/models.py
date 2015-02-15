@@ -97,7 +97,7 @@ class Referral(models.Model):
     reason = models.CharField(max_length = 100, choices=REASONS_CHOICES)
     description = models.CharField(max_length=300, blank=True)
     in_dos = models.BooleanField(default=False)
-    consequence = models.CharField(max_length=3, choices=CONSEQUENCE_CHOICES, default='DET', blank=True)
+    consequence = models.CharField(max_length=3, choices=CONSEQUENCE_CHOICES, blank=True)
 
     def from_today(self):
         return datetime.date == now.date

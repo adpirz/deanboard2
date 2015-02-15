@@ -10,6 +10,7 @@ from django.contrib.auth.views import logout
 from django.contrib.auth.decorators import login_required
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
+import autocomplete_light
 
 # Create your views here.
 class IndexView(ListView):
