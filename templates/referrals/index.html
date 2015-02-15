@@ -3,7 +3,9 @@
 
 {% block body_block %}
 <div class="container">
-	<button type="button" class="btn btn-danger btn-lg btn-block visible-xs" href="{% url 'referral_new' %}">New Referral</button>
+	<form action="{% url 'referral_new' %}">
+	<button type="submit" class="btn btn-danger btn-lg btn-block visible-xs">New Referral</button>
+	</form>
 	<h1 align="center">Referrals</h1>
 	
 </div>
