@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-
+{% load tz %}
 {% block body_block %}
 <div class="container">
 	<form action="{% url 'referral_new' %}">
@@ -15,7 +15,7 @@
 	<div class="container col-sm-6 col-md-4 col-lg-4">
 		<div class="panel panel-default">
 			 <div class="panel-heading">
-				<h3 class="panel-title"><a href = "{% url 'referral' referral.pk %}">#{{ referral.pk }}: {{referral.scholar.first_name}}, sent by {{ referral.staff.user.last_name }} ({{ referral.datetime.time }})</a></h3>
+				<h3 class="panel-title"><a href = "{% url 'referral' referral.pk %}">#{{ referral.pk }}: {{referral.scholar.first_name}}, sent by {{ referral.staff.user.last_name }} ({{ referral.datetime.time}})</a></h3>
 			</div>
 			<div class="panel-body">
 			<ul class="list-group">

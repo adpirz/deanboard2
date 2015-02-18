@@ -22,7 +22,6 @@ class ReferralInline(admin.TabularInline):
 	model = Referral
 	extra = 0
 
-
 class AdvisoryAdmin(admin.ModelAdmin):
 	inlines = [ScholarInline, StaffInline]
 

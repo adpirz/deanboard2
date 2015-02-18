@@ -1,29 +1,54 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-from referrals.models import Staff, Scholar, Referral, Advisory
+from .models import Staff, Scholar, Referral, Advisory
+from .forms import ReferralForm
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django import forms
 from django.core.urlresolvers import reverse_lazy
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.views import logout
 from django.contrib.auth.decorators import login_required
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit
-import autocomplete_light
+
 
 # Create your views here.
+
 class IndexView(ListView):
 	template_name = 'referrals/index.html'
 	model = Referral
 
-# class ReferralDetail(DetailView):
-# 	model = Referral
+# def ReferralCreate(request):
+# 	if request.method == 'POST':
+# 		form = ReferralForm(request.POST)
 
-	# def get_context_data(self, **kwargs):
-	# 	context = super(ReferralDetail, self).get_context_data(**kwargs)
-	# 	return context
+# 		if form.is_valid():
+# 			form.save(commit=True)
+# 			return HttpResponseRedirect('index')
 
+# 		else:
+# 			print form.errors
+# 	else:
+# 		form = ReferralForm()
+
+# 	return render(request,'referrals/referral_form.html',{'form':form})
+
+class ReferralCreate(CreateView):
+	form_class=ReferralForm
+	model = Referral
+
+
+class ReferralList(ListView):
+	model = Referral
+
+class ReferralDelete(DeleteView):
+	model = Referral
+	success_url = reverse_lazy('index')
+
+class ReferralEdit(UpdateView):
+	form_class=ReferralForm
+	model = Referral
+	
 class ScholarReferrals(ListView):
 
 	template_name = 'referrals/scholar_referrals.html'
@@ -36,30 +61,6 @@ class ScholarReferrals(ListView):
 		context = super(ScholarReferrals, self).get_context_data(**kwargs)
 		context['scholar'] = self.scholar
 		return context
-
-class ReferralCreate(CreateView):
-	model = Referral
-	fields = ['scholar','staff','reason','description','consequence']
-	def __init__(self, *args, **kwargs):
-		super(ReferralCreate, self).__init__(*args, **kwargs)
-		self.helper = FormHelper()
-		self.helper.form_id = 'id-referral'
-		self.helper.form_method='post'
-		self.helper.form_class='ModelForm'
-		self.helper.form_action='submit'
-
-		self.helper.add_input(Submit('submit','Submit'))
-
-# class ReferralList(ListView):
-# 	model = Referral
-
-# class ReferralDelete(DeleteView):
-# 	model = Referral
-# 	success_url = reverse_lazy('index')
-
-class ReferralEdit(UpdateView):
-	model = Referral
-	fields = ['scholar','staff','reason','description','consequence']
 
 def user_login(request):
 	if request.method == 'POST':
@@ -79,6 +80,7 @@ def user_login(request):
 
 	else:
 		return render(request,'referrals/login.html',{})
+
 
 @login_required
 def user_logout(request):

@@ -28,6 +28,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'autocomplete_light',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -36,7 +37,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'referrals',
     'crispy_forms',
-    'autocomplete_light',
 )
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
