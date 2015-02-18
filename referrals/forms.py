@@ -23,7 +23,7 @@ class ReferralForm(autocomplete_light.ModelForm):
 
 	class Meta:
 		model = Referral
-		fields = ['scholar','staff','reason','description','consequence']
+		fields = ['scholar','reason','description','consequence']
 
 
 
