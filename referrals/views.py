@@ -10,6 +10,8 @@ from django.core.urlresolvers import reverse_lazy
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.views import logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
+
 
 
 # Create your views here.
@@ -37,7 +39,6 @@ class ReferralCreate(CreateView):
 	form_class=ReferralForm
 	model = Referral
 
-
 class ReferralList(ListView):
 	model = Referral
 
@@ -48,7 +49,7 @@ class ReferralDelete(DeleteView):
 class ReferralEdit(UpdateView):
 	form_class=ReferralForm
 	model = Referral
-	
+
 class ScholarReferrals(ListView):
 
 	template_name = 'referrals/scholar_referrals.html'

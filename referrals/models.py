@@ -72,6 +72,7 @@ class Scholar(models.Model):
 class Referral(models.Model):
     
     REASONS_CHOICES = (
+        
     ('Repeated', 'Repeated Infractions'),
     ('Walkout', 'Walked out'),
     ('Ignored', 'Walked Away/Ignored'),
