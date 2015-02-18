@@ -39,6 +39,10 @@ class ReferralCreate(CreateView):
 	form_class=ReferralForm
 	model = Referral
 
+	def form_valid(self, form):
+		form.instance.staff = self.request.user.staff
+		return super(ReferralCreate, self).form_valid(form)
+
 class ReferralList(ListView):
 	model = Referral
 
