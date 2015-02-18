@@ -1,0 +1,56 @@
+[
+{
+    "fields": {
+        "username": "adpirz",
+        "first_name": "Adnan",
+        "last_name": "Pirzada",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": "2015-02-17T21:24:22.992Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$6G8z5jOJF6Z6$KfNverM4ZlQCIWEG8e+xQK+13OeaunkIriN178Zvd2c=",
+        "email": "ad.pirz@gmail.com",
+        "date_joined": "2015-01-25T02:48:43Z"
+    },
+    "model": "auth.user",
+    "pk": 1
+},
+{
+    "fields": {
+        "username": "ciatridis",
+        "first_name": "Christina",
+        "last_name": "Iatridis",
+        "is_active": true,
+        "is_superuser": false,
+        "is_staff": true,
+        "last_login": "2015-01-26T02:30:25.909Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$GvincMFsWOd8$nZtJRWff/3CYHdHIbLKQeuWz41SQkLJ5ddw2YVoOn4A=",
+        "email": "ciatridis@republiccharterschools.org",
+        "date_joined": "2015-01-25T06:23:09Z"
+    },
+    "model": "auth.user",
+    "pk": 2
+},
+{
+    "fields": {
+        "username": "afowler",
+        "first_name": "Anthony",
+        "last_name": "Fowler",
+        "is_active": true,
+        "is_superuser": false,
+        "is_staff": true,
+        "last_login": "2015-01-25T06:23:39Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$BRbH5PjCU7Lf$8zdIDdXJvQlFJddhA89jY3QX6sg3TFzgbHewejOKXZA=",
+        "email": "afowler@republiccharterschools.org",
+        "date_joined": "2015-01-25T06:23:39Z"
+    },
+    "model": "auth.user",
+    "pk": 3
+}
+]

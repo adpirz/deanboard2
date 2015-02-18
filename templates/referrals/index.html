@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% load tz %}
+
 {% block body_block %}
 <div class="container">
 	<form action="{% url 'referral_new' %}">
@@ -12,10 +13,10 @@
 
 {% if object_list %}
 	{% for referral in object_list %}
-	<div class="container col-sm-6 col-md-4 col-lg-4">
+	<div class="container col-sm-6 col-md-6 col-lg-4">
 		<div class="panel panel-default">
 			 <div class="panel-heading">
-				<h3 class="panel-title"><a href = "{% url 'referral' referral.pk %}">#{{ referral.pk }}: {{referral.scholar.first_name}}, sent by {{ referral.staff.user.last_name }} ({{ referral.datetime.time}})</a></h3>
+				<h3 class="panel-title" align='center'><a href = "{% url 'referral' referral.pk %}"><strong>{{referral.scholar.first_name}}</strong> sent by <strong>{{ referral.staff.prefix }} {{ referral.staff.user.last_name }}</strong><br/>({{referral.datetime}})</a></h3>
 			</div>
 			<div class="panel-body">
 			<ul class="list-group">
@@ -25,11 +26,13 @@
 				<li class="list-group-item">Reason: {{ referral.reason }}</li>
 				<li class="list-group-item">Consequence: {{ referral.consequence }}</li>
 			</ul>
-			{% if user.is_authenticated %}
+			{% if user.is_authenticated and user.staff == referral.staff or user.is_authenticated and user.is_staff %}
 			<div class="btn-group btn-group-justified">
 				<a href = "{% url 'referral_delete' referral.pk %}" class="btn btn-warning" >Delete</a>
 				<a href = "{% url 'referral_edit' referral.pk %}" class="btn btn-primary ">Edit</a>
 			</div>
+			{% else %}
+			<button class='btn btn-block' disabled>Restricted</button>
 			{% endif %}	
 			</div>
 			</div> <!--end one referral-->
