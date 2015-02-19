@@ -2,7 +2,9 @@ import autocomplete_light
 from models import Referral, Scholar, Staff
 
 autocomplete_light.register(Scholar,
-	search_fields=['first_name','last_name'])
+	search_fields=['first_name','last_name'],
+	attrs = {'placeholder':'Type a scholar\'s name in here.'}
+	)
 
 autocomplete_light.register(Referral,
 	search_fields=['scholar','staff'])
