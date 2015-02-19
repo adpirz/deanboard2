@@ -29,7 +29,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{% url 'index' %}"><strong>DeanBoard</strong></a>
+                <a class="navbar-brand" href="{% url 'index' %}"><strong>DeanBoard</strong> [alpha]</a>
                 
                 
             </div>
@@ -57,9 +57,16 @@
                 {% block body_block %}
                 {% endblock body_block %}
             {% else %}
-                <div class="jumbotron">
-                    <div class="container">
-                        <h1>Login</h1>
+                <div class="container">
+                    <div class="jumbotron">
+                        <h3>DeanBoard Login</h3>
+                        <p>Enter login information for <strong>RePublic Schools</strong></p>
+                        <p id='clickforpup'><em>v0.1 (alpha)</em></p>
+                        <div class="container" id='alphathepup'>
+                            <img src="{% static 'puppycute.gif' %}" alt="Best way to start the day." class ="img-responsive img-rounded">   
+                        <p align='center'>(this is Alpha the pup)</p>
+                        </div>
+                    </div>
                             <form action="{% url 'user_login' %}" method="post" accept-charset="utf-8">
                             {% csrf_token %}                    
                                 {% if error %}
@@ -68,19 +75,15 @@
                                        <strong>Error</strong> {{ error }}
                                    </div>
                                 {% endif %}
-                                <div class="form-group">
-                                    <label for="username">Username</label>
-                                    <input type="text" class="form-control" name="username" placeholder="Username">
-                                    <label for="password">Password</label>
-                                    <input type="password" name="password" class="form-control" required="required">
-                                </div>
-                                <div class="well">
-                                    <div class="container">
-                                        <img src="{% static 'puppycute.gif' %}" alt="Best way to start the day." class ="img-responsive img-rounded">   
+                                <div class="well col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                                    <div class="form-group">
+                                        <label for="username"><strong>Username</strong></label>
+                                        <input type="text" class="form-control" name="username" placeholder="Username">
+                                        <label for="password"><strong>Password</strong></label>
+                                        <input type="password" name="password" class="form-control" required="required" placeholder="Password">
+                                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
                                     </div>
-                                </div>
-                            
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>    
                             </form>                       
                     </div>
                 </div>
@@ -90,7 +93,8 @@
             <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         {% include 'autocomplete_light/static.html' %}
-                <!-- Bootstrap JavaScript -->
+        <script type = "text/javascript" src="{% static 'js/referrals-ajax.js' %}"></script>
+        <!-- Bootstrap JavaScript -->
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 

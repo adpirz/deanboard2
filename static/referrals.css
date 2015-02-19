@@ -1,7 +1,10 @@
 body{
-	padding-top:70px;
+	padding-top:80px;
 }
 
+.panel{
+	min-width: 345px;
+}
 .autocomplete-light-widget input,
 .autocomplete-light-widget input:focus {
     width: 100% !important;
