@@ -5,11 +5,13 @@ body{
 .panel{
 	min-width: 345px;
 }
+
 .autocomplete-light-widget input,
 .autocomplete-light-widget input:focus {
     width: 100% !important;
 }
 
 .autocomplete-light-widget {
-    display: block !important;
+    width: 390px !important;
 }
+
