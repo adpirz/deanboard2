@@ -59,7 +59,7 @@
 					<th>Scholar</th>
 					<th class='hidden-xs'>Staff</th>
 					<th class='hidden-xs'>Reason</th>
-					<th class='hidden-xs'>Description</th>
+					<th class='hidden-xs hidden-sm'>Description</th>
 					<th>Consequence</th>
 				</tr>
 			</thead>
@@ -70,7 +70,7 @@
 					<td>{{ referral.scholar }}</td>
 					<td class='hidden-xs'>{{ referral.staff.user.last_name }}</td>
 					<td class='hidden-xs'>{{ referral.reason }}</td>
-					<td class='hidden-xs'>{{ referral.description }}</td>
+					<td class='hidden-xs hidden-sm'>{{ referral.description }}</td>
 					<td>{{ referral.consequence }}</td>
 				</tr>
 			{% endfor %}
