@@ -17,7 +17,6 @@ class ReferralForm(autocomplete_light.ModelForm):
 		self.helper.form_method='post'
 		self.helper.form_class='ModelForm'
 		self.helper.form_action='referral_new'
-		# self.helper.add_input(Submit('submit','Submit', css_class='btn-block btn-lg'))
 		self.helper.layout = Layout (
 			Div(
 				'scholar',
@@ -36,7 +35,29 @@ class ReferralForm(autocomplete_light.ModelForm):
 		model = Referral
 		fields = ['scholar','reason','description','consequence']
 
+class ReferralFormEdit(forms.ModelForm):
+	reason = forms.ChoiceField(choices=Referral.REASONS_CHOICES,
+		widget=forms.RadioSelect)
 
+	def __init__(self, *args, **kwargs):
+		self.helper = FormHelper()
+		self.helper.form_method='post'
+		self.helper.layout = Layout (
+			Div(
+				Div('reason', css_id='reason-list'),
+				'description',
+				'consequence',
+				FormActions(
+					Submit('submit','Update',css_class='btn-block btn-lg')),
+				css_class='well col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3'
+				)
+			)
+		self.user = kwargs.pop('user',None)
+		super(ReferralFormEdit, self).__init__(*args, **kwargs)
+
+	class Meta:
+		model = Referral
+		fields = ['reason','description','consequence']
 
 
 	

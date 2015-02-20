@@ -16,7 +16,13 @@
 	<div class="container col-sm-6 col-md-6 col-lg-4" data-grade='{{ referral.scholar.grade }}' data-advisory='{{ referral.scholar.advisory }}'>
 		<div class="panel panel-default">
 			 <div class="panel-heading">
-				<h3 class="panel-title" align='center'><a href = "{% url 'referral' referral.pk %}"><strong>{{referral.scholar.first_name}}</strong> sent by <strong>{{ referral.staff.prefix }} {{ referral.staff.user.last_name }}</strong><br/>({{referral.datetime}})</a></h3>
+				<h3 class="panel-title" align='center'><a href = "{% url 'referral' referral.pk %}"><strong>{{referral.scholar.first_name}}</strong> sent by <strong>{{ referral.staff.prefix }} {{ referral.staff.user.last_name }}</strong></a></h3>
+				<h3 class = 'panel-title datetimestamp' align='center'>
+				{% if today = referral.datetime.date %}
+				({{referral.datetime|date:"g:i a"}} | {{ referral.datetime|timesince }} ago)</h3>
+				{% else %}
+				({{referral.datetime}})</h3>
+				{% endif %}
 			</div>
 			<div class="panel-body">
 			<ul class="list-group">

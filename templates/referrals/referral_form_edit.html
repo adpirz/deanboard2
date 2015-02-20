@@ -1,0 +1,15 @@
+{% extends "base.html" %}	
+{% load staticfiles %}
+{% block body_block %}
+{% load crispy_forms_tags %}
+
+<div class="container edit-head">
+	<p class = 'hidden-xs' align='center'>Referral for  <strong>{{ referral.scholar }}</strong> by <strong>{{ user.staff.prefix }} {{ user.last_name }}</strong></p>
+	<p class = 'visible-xs' align='center'>Scholar: <strong>{{ referral.scholar }}</strong><br>Staff: <strong>{{ user.staff.prefix }} {{ user.last_name }}</strong></p>
+</div>
+
+{% crispy form %}
+
+	
+
+{% endblock body_block %}

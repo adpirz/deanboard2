@@ -10,8 +10,15 @@ body{
 	font-weight: bold;
 }
 
+.datetimestamp {
+	padding-top: 7px;
+}
 .panel{
 	min-width: 345px;
+}
+
+.edit-head{
+	font-size: 15px;
 }
 
 .autocomplete-light-widget input,
@@ -27,7 +34,12 @@ body{
 	margin-left: 20px;
 }
 
-form > .well {
+form > .well, .jumbotron {
 	border: 1px solid;
 	border-color: #666666;
+}
+
+
+.center-button {
+	text-align: center;
 }
