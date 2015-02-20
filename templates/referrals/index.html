@@ -7,43 +7,77 @@
 	<form action="{% url 'referral_new' %}">
 	<button type="submit" class="btn btn-danger btn-lg btn-block visible-xs">New Referral</button>
 	</form>
-	<h3 align="center">Referrals</h3>
+	<h3 align="center">Today's Referrals</h3>
 	
 </div>
 
 {% if object_list %}
 	{% for referral in object_list %}
-	<div class="container col-sm-6 col-md-6 col-lg-4" data-grade='{{ referral.scholar.grade }}' data-advisory='{{ referral.scholar.advisory }}'>
-		<div class="panel panel-default">
-			 <div class="panel-heading">
-				<h3 class="panel-title" align='center'><a href = "{% url 'referral' referral.pk %}"><strong>{{referral.scholar.first_name}}</strong> sent by <strong>{{ referral.staff.prefix }} {{ referral.staff.user.last_name }}</strong></a></h3>
-				<h3 class = 'panel-title datetimestamp' align='center'>
-				{% if today = referral.datetime.date %}
-				({{referral.datetime|date:"g:i a"}} | {{ referral.datetime|timesince }} ago)</h3>
-				{% else %}
-				({{referral.datetime}})</h3>
-				{% endif %}
+	<div id='referrals-today'>
+	{% if today == referral.datetime.date %}
+			<div class="container col-sm-6 col-md-6 col-lg-4" data-grade='{{ referral.scholar.grade }}' data-advisory='{{ referral.scholar.advisory }}'>
+				<div class="panel panel-default">
+					 <div class="panel-heading">
+						<h3 class="panel-title" align='center'><a href = "{% url 'referral' referral.pk %}"><strong>{{referral.scholar.first_name}}</strong> sent by <strong>{{ referral.staff.prefix }} {{ referral.staff.user.last_name }}</strong></a></h3>
+						<h3 class = 'panel-title datetimestamp' align='center'>
+						({{referral.datetime|date:"g:i a"}} -- {{ referral.datetime|timesince }} ago)</h3>
+					</div>
+					<div class="panel-body">
+					<ul class="list-group">
+						<li class="list-group-item">Scholar: <a href="{% url 'scholar' referral.scholar.pk %}">{{ referral.scholar }}</a></li>
+						<li class="list-group-item">Staff: {{ referral.staff }}</li>
+						<li class="list-group-item">Time: {{ referral.datetime }}</li>
+						<li class="list-group-item">Reason: {{ referral.reason }}</li>
+						<li class="list-group-item">Consequence: {{ referral.consequence }}</li>
+					</ul>
+					{% if user.is_authenticated and user.staff == referral.staff or user.is_authenticated and user.is_staff %}
+					<div class="btn-group btn-group-justified">
+						<a href = "{% url 'referral_delete' referral.pk %}" class="btn btn-warning" >Delete</a>
+						<a href = "{% url 'referral_edit' referral.pk %}" class="btn btn-primary ">Edit</a>
+					</div>
+					{% else %}
+					<button class='btn btn-block' disabled>Restricted</button>
+					{% endif %}	
+					</div>
+				</div> <!--end one referral-->
 			</div>
-			<div class="panel-body">
-			<ul class="list-group">
-				<li class="list-group-item">Scholar: <a href="{% url 'scholar' referral.scholar.pk %}">{{ referral.scholar }}</a></li>
-				<li class="list-group-item">Staff: {{ referral.staff }}</li>
-				<li class="list-group-item">Time: {{ referral.datetime }}</li>
-				<li class="list-group-item">Reason: {{ referral.reason }}</li>
-				<li class="list-group-item">Consequence: {{ referral.consequence }}</li>
-			</ul>
-			{% if user.is_authenticated and user.staff == referral.staff or user.is_authenticated and user.is_staff %}
-			<div class="btn-group btn-group-justified">
-				<a href = "{% url 'referral_delete' referral.pk %}" class="btn btn-warning" >Delete</a>
-				<a href = "{% url 'referral_edit' referral.pk %}" class="btn btn-primary ">Edit</a>
-			</div>
-			{% else %}
-			<button class='btn btn-block' disabled>Restricted</button>
-			{% endif %}	
-			</div>
-			</div> <!--end one referral-->
+		<div class="clearfix">
+		
 		</div>
+	</div>		
+	{% endif %} <!--End of today's list-->
 	{% endfor %}
+<div class="container">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		   <strong>Previous Referrals</strong>
+		</div>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Scholar</th>
+					<th class='hidden-xs'>Staff</th>
+					<th class='hidden-xs'>Reason</th>
+					<th class='hidden-xs'>Description</th>
+					<th>Consequence</th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for referral in object_list %}
+				<tr>
+					<td>{{ referral.datetime.date |date:"D, M j" }}</td>
+					<td>{{ referral.scholar }}</td>
+					<td class='hidden-xs'>{{ referral.staff.user.last_name }}</td>
+					<td class='hidden-xs'>{{ referral.reason }}</td>
+					<td >{{ referral.description }}</td>
+					<td>{{ referral.consequence }}</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
 {% else %}
 <h2>No referrals.</h2>
 {% endif %}
