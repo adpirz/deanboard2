@@ -2,6 +2,14 @@ body{
 	padding-top:80px;
 }
 
+.asteriskField {
+	visibility: hidden;
+}
+
+.form-group > label {
+	font-weight: bold;
+}
+
 .panel{
 	min-width: 345px;
 }
@@ -12,6 +20,14 @@ body{
 }
 
 .autocomplete-light-widget {
-    width: 390px !important;
+    width: 310px !important;
 }
 
+#reason-list{
+	margin-left: 20px;
+}
+
+form > .well {
+	border: 1px solid;
+	border-color: #666666;
+}

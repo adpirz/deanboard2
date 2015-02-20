@@ -7,13 +7,13 @@
 	<form action="{% url 'referral_new' %}">
 	<button type="submit" class="btn btn-danger btn-lg btn-block visible-xs">New Referral</button>
 	</form>
-	<h1 align="center">Referrals</h1>
+	<h3 align="center">Referrals</h3>
 	
 </div>
 
 {% if object_list %}
 	{% for referral in object_list %}
-	<div class="container col-sm-6 col-md-6 col-lg-4">
+	<div class="container col-sm-6 col-md-6 col-lg-4" data-grade='{{ referral.scholar.grade }}' data-advisory='{{ referral.scholar.advisory }}'>
 		<div class="panel panel-default">
 			 <div class="panel-heading">
 				<h3 class="panel-title" align='center'><a href = "{% url 'referral' referral.pk %}"><strong>{{referral.scholar.first_name}}</strong> sent by <strong>{{ referral.staff.prefix }} {{ referral.staff.user.last_name }}</strong><br/>({{referral.datetime}})</a></h3>

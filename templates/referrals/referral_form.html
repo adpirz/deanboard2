@@ -4,13 +4,9 @@
 {% load crispy_forms_tags %}
 
 <div class="container">
-<div class="panel panel-default">
-	<div class="panel-body">
-	   <h3 align='center'>Referral by {{ user.staff.prefix }} {{ user.last_name }}</h3 align='center'>
-	</div>
+	<p align='center'>Referral by <strong>{{ user.staff.prefix }} {{ user.last_name }}</strong></p>
 </div>
-{% csrf_token %}
+	
 {% crispy form %}
-</div>
 
 {% endblock body_block %}
