@@ -41,13 +41,13 @@
 					</div>
 				</div> <!--end one referral-->
 			</div>
-		<div class="clearfix">
 		
-		</div>
-	</div>		
+	</div>	
+
 	{% endif %} <!--End of today's list-->
 	{% endfor %}
 <div class="container">
+	<div class="clearfix"></div>	
 	<div class="panel panel-default">
 		<div class="panel-heading">
 		   <strong>Previous Referrals</strong>
@@ -65,7 +65,7 @@
 			</thead>
 			<tbody>
 			{% for referral in object_list %}
-				<tr>
+				<tr class='click-row' data-href="{% url 'referral_edit' referral.pk %}">
 					<td>{{ referral.datetime.date |date:"D, M j" }}</td>
 					<td>{{ referral.scholar }}</td>
 					<td class='hidden-xs'>{{ referral.staff.user.last_name }}</td>
