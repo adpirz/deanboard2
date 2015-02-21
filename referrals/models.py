@@ -84,6 +84,7 @@ class Referral(models.Model):
     ('Response', 'Inappropriate response to a consequence'),
     ('Horseplay', 'Horseplay'),
     ('Fight', 'Fight'),
+    ('Other','Other'),
     )
 
     CONSEQUENCE_CHOICES = (

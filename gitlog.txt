@@ -1,0 +1,216 @@
+commit 1583386f09fcaf53125bbf1f36c9bdafc58e8afa
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Sat Feb 21 12:51:57 2015 -0600
+
+    added teacher referrals view
+
+commit 428656ce1b2a065f47f174a9e158ba976c466800
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Sat Feb 21 12:41:51 2015 -0600
+
+    added datatables; hid consequence
+
+commit c661bb9d78a85e6e8753849e5a282bccc593099c
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Fri Feb 20 13:38:15 2015 -0600
+
+    hide desc on small, too
+
+commit 44de0e2db98335985d154600821a85254e961ef6
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Fri Feb 20 13:18:23 2015 -0600
+
+    fixed hdiden description
+
+commit 6ab693f384e4faa0930f4c2edf4204f918f4d4f5
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Fri Feb 20 13:17:02 2015 -0600
+
+    added clearfix to previous table
+
+commit 8604b5fd14dd75fbea5fa1a618b490a93e03eedb
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Fri Feb 20 13:00:51 2015 -0600
+
+    added previous referrals table
+
+commit f81c09761408bc6d9409e21bda61ff98cab21767
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Fri Feb 20 12:21:05 2015 -0600
+
+    updated editing view
+
+commit da7277433187729b757fa44be0daaa4ba1dce27b
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Thu Feb 19 23:02:45 2015 -0600
+
+    updated new ref with border
+
+commit d23a10f3596f41fbbdff804feece530abb3b594d
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Thu Feb 19 18:04:41 2015 -0600
+
+    go back to paper
+
+commit f4dac29b4af9e61e5493b161cda1674e48539cf9
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Thu Feb 19 17:23:50 2015 -0600
+
+    fixed autocomplete not hiding temporarily
+
+commit 9e982d22043d6f294e85ec10e4ad090f13f0ddbc
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Thu Feb 19 14:50:04 2015 -0600
+
+    moved submit button down a notch
+
+commit e8d7cef7ae917588ff82ace0ded5c8feb49460e9
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Thu Feb 19 14:45:50 2015 -0600
+
+    updated login page
+
+commit 36d706bfbd3ad5232709093f3b274344acd27f31
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Thu Feb 19 11:58:52 2015 -0600
+
+    added bootswatchees; switched css to paper
+
+commit e44322a9592b823cebf8ddf8debdd729154bc853
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Wed Feb 18 12:46:00 2015 -0600
+
+    actually removed staff
+
+commit e2f1751513fc1381acc74fa05dee03dd5d315625
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Wed Feb 18 12:43:51 2015 -0600
+
+    created auto-staff add
+
+commit fb7fdbd95862e6cedc82c7b1a327acc24de56990
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Wed Feb 18 11:49:07 2015 -0600
+
+    alpha deployment
+
+commit f1613a17d486f41693d8c781b28c1f787cd5a28b
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Wed Feb 18 10:27:30 2015 -0600
+
+    deanboard on logo
+
+commit e642c0a44218c3fcbe64493dbe062da0065a0ebb
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Wed Feb 18 10:23:16 2015 -0600
+
+    back to Deanboard
+
+commit 9f448db75d312c51304505c9d9c0b2d5a735fa50
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Wed Feb 18 10:20:11 2015 -0600
+
+    added NP initial data
+
+commit bfe50a7278b9ced17ddf2faa2086428d73028f54
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Wed Feb 18 05:55:05 2015 -0600
+
+    got AC working
+
+commit bc8eb25a909eeffa34e5092405c88afc9e8279ff
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Sun Feb 15 12:26:10 2015 -0600
+
+    fixed span button for new ref
+
+commit a8cb4578919d601dca6095ca50d1e0c9ef906737
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Sat Feb 14 20:16:49 2015 -0600
+
+    added ac-light to req.txt
+
+commit b6b997b6e1728f9087f6f3056fa2e8a0686ade13
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Sat Feb 14 20:11:55 2015 -0600
+
+    added puppy to login
+
+commit f1474bbedfe5d97b99dfaa227c9044cd609af0b5
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Fri Feb 13 13:54:21 2015 -0600
+
+    updated login and navbar
+
+commit 877f98386733f59caa204a298a9e6d67afa9bc9f
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Thu Feb 12 19:42:00 2015 -0600
+
+    added dajaxice
+
+commit f99aecd05137ffb6e06ad0110719038ff6a5c080
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Mon Feb 2 01:20:55 2015 -0600
+
+    added jquery includes on base.html
+
+commit f2d096cf52543ca31ff7f54f2ef64c2b34f1b048
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Mon Feb 2 00:54:11 2015 -0600
+
+    set up static server
+
+commit c38be8ae02177510b1d4040a53495935fdcc2795
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Mon Feb 2 00:43:06 2015 -0600
+
+    updated BASE_DIR in settings
+
+commit 4bd6ae3f1be713a629fb2d14a25d733d0de2069a
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Mon Feb 2 00:24:18 2015 -0600
+
+    reconfig of db using dj-db
+
+commit 28face6d67e7d57c6c183d5fc432e779497b0b51
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Mon Feb 2 00:12:32 2015 -0600
+
+    separate settings
+
+commit cc48ba247ca633cf044a1d716996b9ec099a4183
+Merge: 54f6ef6 cc2384b
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Sun Feb 1 23:31:11 2015 -0600
+
+    Merge branch 'master' of https://github.com/adpirz/deanboard2
+
+commit 54f6ef62b868eef3b7fafe759693577834c987bf
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Sun Feb 1 23:29:38 2015 -0600
+
+    initial
+
+commit cc2384b08465a7f06778ae74dbb5c0237886de0f
+Author: adpirz <ad.pirz@gmail.com>
+Date:   Sun Feb 1 23:29:31 2015 -0600
+
+    Initial commit
+
+commit cbb2e83b39bb5724fd0950972c999db56d2a3e0b
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Sat Jan 31 16:27:59 2015 -0600
+
+    update settings with dj-db
+
+commit 8d81bbc2a229fd8881059fab38fe2f3a32b3131a
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Sat Jan 31 16:13:58 2015 -0600
+
+    update db
+
+commit 4a2ab009ba88b185e6d406e7419435435d8b3d69
+Author: Adnan Pirzada <adpirz@Adnans-MacBook-Pro.local>
+Date:   Sat Jan 31 16:03:34 2015 -0600
+
+    deanboard2 initial commit
