@@ -26,6 +26,9 @@ class IndexView(ListView):
 class AllReferralsView(IndexView):
 	template_name = 'referrals/all_referrals.html'
 
+class TeacherReferralsView(IndexView):
+	template_name = 'referrals/teacher_referrals.html'
+
 # def ReferralCreate(request):
 # 	if request.method == 'POST':
 # 		form = ReferralForm(request.POST)

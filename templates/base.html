@@ -38,7 +38,7 @@
                 <ul class="nav navbar-nav navbar-left">
                 {% if user.is_authenticated %}
                     {% if user.staff.prefix %}
-                    <li><a href="{% url 'user_login' %}">Signed in as <strong>{{ user.staff.prefix }} {{ user.last_name }}</strong></a></li>
+                    <li><a href="{% url 'teacher_referrals' %}"><strong>{{ user.staff.prefix }} {{ user.last_name }}</strong></a></li>
                     {% else %}
                     <li><a href="user"><strong>{{ user.username}}</strong></a></li>
                     {% endif %}
