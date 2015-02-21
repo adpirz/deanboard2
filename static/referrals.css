@@ -17,6 +17,10 @@ body{
 .datetimestamp {
 	padding-top: 7px;
 }
+
+.dataTables_wrapper {
+	padding:10px;
+}
 .panel{
 	min-width: 345px;
 }

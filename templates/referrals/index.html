@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% load tz %}
-
+{% block title %}
+	Home
+{% endblock title %}
 {% block body_block %}
 <div class="container">
 	<form action="{% url 'referral_new' %}">
@@ -14,7 +16,7 @@
 {% if object_list %}
 	{% for referral in object_list %}
 	<div id='referrals-today'>
-	{% if today == referral.datetime.date %}
+	{% if today <= referral.datetime.date %}
 			<div class="container col-sm-6 col-md-6 col-lg-4" data-grade='{{ referral.scholar.grade }}' data-advisory='{{ referral.scholar.advisory }}'>
 				<div class="panel panel-default">
 					 <div class="panel-heading">
@@ -50,9 +52,10 @@
 	<div class="clearfix"></div>	
 	<div class="panel panel-default">
 		<div class="panel-heading">
-		   <strong>Previous Referrals</strong>
+		   <strong>Previous Referrals</strong> 
+		   <br>Sort and search through previous referrals below.
 		</div>
-		<table class="table table-hover">
+		<table class="table table-hover table-striped table-condensed" id='previous-table'>
 			<thead>
 				<tr>
 					<th>Date</th>
@@ -65,6 +68,7 @@
 			</thead>
 			<tbody>
 			{% for referral in object_list %}
+			{% if today > referral.datetime.date %}
 				<tr class='click-row' data-href="{% url 'referral_edit' referral.pk %}">
 					<td>{{ referral.datetime.date |date:"D, M j" }}</td>
 					<td>{{ referral.scholar }}</td>
@@ -73,6 +77,7 @@
 					<td class='hidden-xs hidden-sm'>{{ referral.description }}</td>
 					<td>{{ referral.consequence }}</td>
 				</tr>
+			{% endif %}
 			{% endfor %}
 			</tbody>
 		</table>

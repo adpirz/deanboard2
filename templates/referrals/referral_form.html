@@ -3,6 +3,15 @@
 {% block body_block %}
 {% load crispy_forms_tags %}
 
+{% if not user.is_staff %}
+	<style>
+	#div_id_consequence {
+		visibility: hidden;
+	}
+	</style>
+{% endif %}
+
+
 <div class="container edit-head">
 	<p align='center'>Referral by <strong>{{ user.staff.prefix }} {{ user.last_name }}</strong></p>
 </div>

@@ -23,6 +23,9 @@ class IndexView(ListView):
 	    context['today'] = datetime.date.today()
 	    return context
 
+class AllReferralsView(IndexView):
+	template_name = 'referrals/all_referrals.html'
+
 # def ReferralCreate(request):
 # 	if request.method == 'POST':
 # 		form = ReferralForm(request.POST)
@@ -46,8 +49,14 @@ class ReferralCreate(CreateView):
 		form.instance.staff = self.request.user.staff
 		return super(ReferralCreate, self).form_valid(form)
 
-class ReferralList(ListView):
-	model = Referral
+class ReferralScholarCreate(ReferralCreate):
+	
+	def get_initial(self,**kwargs):
+		scholar = get_object_or_404(Scholar, pk=self.kwargs.get('pk'))
+		return {
+			'scholar':scholar,
+		}
+
 
 class ReferralDelete(DeleteView):
 	model = Referral
@@ -63,7 +72,6 @@ class ScholarReferrals(ListView):
 
 	template_name = 'referrals/scholar_referrals.html'
 	def get_queryset(self):
-
 		self.scholar = get_object_or_404(Scholar, id=self.kwargs['pk'])
 		return Referral.objects.filter(scholar=self.scholar)
 

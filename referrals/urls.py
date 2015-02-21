@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, url, include
-from referrals.views import ReferralCreate, user_login, ScholarReferrals, IndexView, user_logout, ReferralEdit
+from referrals.views import ReferralCreate, AllReferralsView, ReferralScholarCreate, user_login, ScholarReferrals, IndexView, user_logout, ReferralEdit
 #ReferralEdit
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -16,7 +16,8 @@ urlpatterns = patterns('',
 		name = 'referral_delete'),
 	url(r'^referral/(?P<pk>\d+)/edit/$', ReferralEdit.as_view(), name = 'referral_edit'),
 	url(r'^new/$', ReferralCreate.as_view(), name='referral_new'),
-	url(r'^all/$', ListView.as_view(model=Referral), name='referral_list'),
+	url(r'^new/(?P<pk>\d+)', ReferralScholarCreate.as_view(), name='scholar_referral_new'),
+	url(r'^all/$', AllReferralsView.as_view(), name='all_referrals'),
 	url(r'^login/$',user_login, name='user_login'),
 	url(r'^logout/$',user_logout, name='user_logout'),
 	url(r'^scholar/(?P<pk>\d+)$',ScholarReferrals.as_view(), name='scholar'),

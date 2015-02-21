@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block body_block %}
+	
+<div class="container">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		   <strong>All Referrals</strong> 
+		   <br>Sort and search through all referrals below. Today's referrals are highlighted green.
+		</div>
+		<table class="table table-hover table-striped table-condensed" id='all-table'>
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Scholar</th>
+					<th class='hidden-xs'>Staff</th>
+					<th class='hidden-xs'>Reason</th>
+					<th class='hidden-xs hidden-sm'>Description</th>
+					<th>Consequence</th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for referral in object_list %}
+				{% if today <= referral.datetime.date %}
+				<tr class='click-row success' data-href="{% url 'referral_edit' referral.pk %}">
+				{% else %}
+				<tr class='click-row' data-href="{% url 'referral_edit' referral.pk %}">
+				{% endif %}
+					<td>{{ referral.datetime.date |date:"D, M j" }}</td>
+					<td>{{ referral.scholar }}</td>
+					<td class='hidden-xs'>{{ referral.staff.user.last_name }}</td>
+					<td class='hidden-xs'>{{ referral.reason }}</td>
+					<td class='hidden-xs hidden-sm'>{{ referral.description }}</td>
+					<td>{{ referral.consequence }}</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+{% endblock body_block %}

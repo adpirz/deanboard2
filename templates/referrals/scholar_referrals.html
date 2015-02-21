@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
+{% block title %}
+	{{ scholar.first_name }} {{ scholar.last_name }}
+{% endblock title %}	
+
 {% block body_block %}
 
 <h1><strong>{{ scholar.first_name }} {{ scholar.last_name }}</strong>'s Discipline Profile</h1>

@@ -3,6 +3,14 @@
 {% block body_block %}
 {% load crispy_forms_tags %}
 
+{% if not user.is_staff %}
+	<style>
+	#div_id_consequence {
+		visibility: hidden;
+	}
+	</style>
+{% endif %}
+
 <div class="container edit-head">
 	<p class = 'hidden-xs' align='center'>Referral for  <strong>{{ referral.scholar }}</strong> by <strong>{{ user.staff.prefix }} {{ user.last_name }}</strong></p>
 	<p class = 'visible-xs' align='center'>Scholar: <strong>{{ referral.scholar }}</strong><br>Staff: <strong>{{ user.staff.prefix }} {{ user.last_name }}</strong></p>
