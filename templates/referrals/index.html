@@ -14,8 +14,8 @@
 </div>
 
 {% if object_list %}
-	{% for referral in object_list %}
 	<div id='referrals-today'>
+	{% for referral in object_list %}
 	{% if today <= referral.datetime.date %}
 			<div class="container col-sm-6 col-md-6 col-lg-4" data-grade='{{ referral.scholar.grade }}' data-advisory='{{ referral.scholar.advisory }}'>
 				<div class="panel panel-default">
@@ -44,10 +44,10 @@
 				</div> <!--end one referral-->
 			</div>
 		
-	</div>	
 
-	{% endif %} <!--End of today's list-->
+	{% endif %} 
 	{% endfor %}
+	</div>	<!--End of today's list-->
 <div class="container">
 	<div class="clearfix"></div>	
 	<div class="panel panel-default">

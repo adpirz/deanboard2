@@ -6,6 +6,7 @@ $(document).ready(function() {
 	$(".click-row").click(function() {
         window.document.location = $(this).data("href");
     });
+    $.fn.dataTable.moment('ddd, MMM M');
     $('#previous-table, #all-table').DataTable({
     	'lengthChange':false,
     	'pageLength':40,
